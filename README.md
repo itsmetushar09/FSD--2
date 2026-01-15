@@ -1,16 +1,24 @@
-# React + Vite
+**Learning Outcomes:**
+1. Understand SPA Architecture
+Explain how a Single Page Application works and how it differs from traditional multi-page websites.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. Use React Fundamentals
+Create a React application using modern tools.
+Understand JSX, components, props, and state.
 
-Currently, two official plugins are available:
+3. Component-Based Development
+Build reusable and modular UI components.
+Organize the project structure effectively.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+4. Client-Side Routing
+Implement navigation without page reloads using client-side routing concepts.
 
-## React Compiler
+5. State Management Basics
+Manage component-level state and understand data flow in React applications.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+6. Event Handling & User Interaction
+Handle user events such as clicks, form inputs, and conditional rendering.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+7. Modern Frontend Tooling
+Use modern JavaScript (ES6+) features like arrow functions, destructuring, and modules.
+Understand the role of bundlers and development servers.
