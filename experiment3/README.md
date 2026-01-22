@@ -1,16 +1,66 @@
-# React + Vite
+# Aim:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To implement client-side routing in a Single Page Application (SPA) using a modern frontend framework in order to enable navigation between multiple views without reloading the web page.
 
-Currently, two official plugins are available:
+# Theory:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In a Single Page Application (SPA), the entire application runs inside a single HTML page. Instead of loading a new page from the server for each request, SPAs dynamically update the content using JavaScript.
 
-## React Compiler
+Routing in SPAs is handled on the client side using libraries such as React Router. React Router allows developers to define multiple routes that map URLs to specific components. When a user navigates to a different route, only the required component is rendered, improving performance and user experience.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Key routing components include:
 
-## Expanding the ESLint configuration
+BrowserRouter: Wraps the application and enables routing using browser history.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Routes: Contains all route definitions.
+
+Route: Maps a URL path to a component.
+
+Link: Used for navigation without page reload.
+
+Client-side routing makes applications faster, smoother, and more interactive compared to traditional multi-page applications.
+
+# Procedure:
+
+Create or open a React-based SPA using Vite.
+
+Install the React Router library:
+
+npm install react-router-dom
+
+
+Create multiple components such as Home, About, and Contact.
+
+Open App.jsx and import required routing components:
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+
+Wrap the application inside BrowserRouter.
+
+Define routes using Routes and Route components.
+
+Use Link components to navigate between routes.
+
+Save the files and start the development server:
+
+npm run dev
+
+
+Verify that navigation occurs smoothly without full page reload.
+
+# Learning Outcomes:
+
+After completing this experiment, the student will be able to:
+
+Understand the concept of client-side routing
+
+Explain the role of routing in SPAs
+
+Implement routing using React Router
+
+Navigate between multiple components without page refresh
+
+Build scalable and structured React applications
+
+Improve user experience through seamless navigation
