@@ -1,0 +1,22 @@
+# Python virtual environment
+virenv/
+venv/
+env/
+bin/
+lib/
+include/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+
+# Node.js (to remove the accidental package-lock files)
+node_modules/
+package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
