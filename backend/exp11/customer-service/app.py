@@ -1,8 +1,9 @@
 from flask import Flask, jsonify
+import os
 
 app = Flask(__name__)
 
-# In-memory data
+
 customers = {
     1: {"name": "Tushar", "orders": [101, 102]},
     2: {"name": "Rahul", "orders": [103]}
@@ -13,6 +14,11 @@ orders = {
     102: {"item": "Phone", "status": "Shipped"},
     103: {"item": "Shoes", "status": "Delivered"}
 }
+
+
+@app.route('/')
+def home():
+    return "Customer Service is Running 🚀"
 
 @app.route('/customers/<int:customer_id>/orders', methods=['GET'])
 def get_customer_orders(customer_id):
@@ -28,6 +34,5 @@ def get_customer_orders(customer_id):
     })
 
 if __name__ == '__main__':
-    import os
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
