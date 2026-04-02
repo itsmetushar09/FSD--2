@@ -3,7 +3,7 @@ import mysql.connector
 
 app = Flask(__name__)
 
-# DB Connection
+
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -12,7 +12,7 @@ conn = mysql.connector.connect(
 )
 cursor = conn.cursor(dictionary=True)
 
-# Validation function
+
 def validate(data):
     if not data.get('name') or not data.get('course'):
         return "Name and Course required"
@@ -20,7 +20,7 @@ def validate(data):
         return "Invalid age"
     return None
 
-# CREATE
+
 @app.route('/students', methods=['POST'])
 def add_student():
     data = request.get_json()
@@ -35,21 +35,21 @@ def add_student():
 
     return jsonify({"message": "Student added successfully"})
 
-# READ ALL
+
 @app.route('/students', methods=['GET'])
 def get_students():
     cursor.execute("SELECT * FROM student")
     result = cursor.fetchall()
     return jsonify(result)
 
-# READ ONE
+
 @app.route('/students/<int:id>', methods=['GET'])
 def get_student(id):
     cursor.execute("SELECT * FROM student WHERE id=%s", (id,))
     result = cursor.fetchone()
     return jsonify(result)
 
-# UPDATE
+
 @app.route('/students/<int:id>', methods=['PUT'])
 def update_student(id):
     data = request.get_json()
@@ -64,7 +64,7 @@ def update_student(id):
 
     return jsonify({"message": "Student updated"})
 
-# DELETE
+
 @app.route('/students/<int:id>', methods=['DELETE'])
 def delete_student(id):
     cursor.execute("DELETE FROM student WHERE id=%s", (id,))
