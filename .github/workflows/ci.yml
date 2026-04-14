@@ -1,4 +1,4 @@
-name: Exp16 CI Pipeline
+name: Exp16 Fullstack CI
 
 on:
   push:
@@ -6,15 +6,16 @@ on:
   pull_request:
 
 jobs:
-  test-exp16:
+
+  backend-test:
     runs-on: ubuntu-latest
 
     defaults:
       run:
-        working-directory: exp16/backend   
+        working-directory: exp16/backend
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Python
@@ -22,8 +23,31 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Tests
+      - name: Run backend tests
         run: pytest
+
+
+  frontend-test:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: exp16/frontend   # ✅ NEW
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run frontend tests
+        run: npm test
